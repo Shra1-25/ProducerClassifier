@@ -74,5 +74,4 @@ void ProducerClassifier::predict_tf(){
  // cleanup
  //tensorflow::closeSession(session);
  //delete graphDef;
-}
-*/
+}*/
