@@ -14,7 +14,7 @@ options.register('skipEvents',
 #    info = "process mode: JetLevel or EventLevel")
 options.parseArguments()
 
-process = cms.Process("FramesProducer")
+process = cms.Process("ClassifierProducer")
 
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.load("Configuration.StandardSequences.GeometryDB_cff")
@@ -43,8 +43,8 @@ process.out = cms.OutputModule("PoolOutputModule",
 
 )
 #print " >> Processing as:",(process.fevt_tf.mode)
-process.TFileService = cms.Service("TFileService",
-    fileName = cms.string("myoutput.root")#options.outputFile
-    )
+#process.TFileService = cms.Service("TFileService",
+#    fileName = cms.string("myoutput.root")#options.outputFile
+#    )
 
-process.p = cms.Path(process.ProducerFrames)
+process.p = cms.Path(process.ProducerClassifier)
