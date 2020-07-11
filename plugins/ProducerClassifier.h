@@ -84,7 +84,7 @@ class ProducerClassifier : public edm::stream::EDProducer<> {
       // ----------member data ---------------------------
       // Tokens 
       //edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
-      edm::EDGetTokenT<std::vector<std::vector<float>>> frames_;
+      //edm::EDGetTokenT<std::vector<std::vector<float>>> frames_;
       static const int nPhotons = 2;
    
       std::vector<std::vector<float>> vEB_photon_frames;
