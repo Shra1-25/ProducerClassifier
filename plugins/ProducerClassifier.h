@@ -82,74 +82,33 @@ class ProducerTest : public edm::stream::EDProducer<> {
       //virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
 
       // ----------member data ---------------------------
-      // Tokens
-      edm::EDGetTokenT<EcalRecHitCollection> EBRecHitCollectionT_; 
-      edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
+      // Tokens 
+      //edm::EDGetTokenT<PhotonCollection> photonCollectionT_;
+      edm::EDGetTokenT<std::vector<std::vector<float>>> frames_;
       static const int nPhotons = 2;
    
-      TProfile2D *hEB_energy;
-      TProfile2D *hEB_time;
-      //TProfile2D *hEB_frame;
-      std::vector<float> vEB_energy_;
-      std::vector<float> vEB_time_;
-      std::vector<std::vector<float>> vEB_frame = std::vector<std::vector<float>> (vEB_frame_height,std::vector<float> (vEB_frame_width, 0.0));
-      //float EB_frame[vEB_frame_height][vEB_frame_width];
-      std::vector<float> vEB_flat_frame = std::vector<float> (vEB_frame_height*vEB_frame_width,0.0);
       std::vector<std::vector<float>> vEB_photon_frames;
-      
-      /*TH1F *h_sel;
-      TH1F * hSC_pT;
-      TH1F * hMinDRgenRecoPho;
-      TH1F * hMinDRrecoPtoGenPt;*/
    
-      TTree* RHTree;
+      /*TTree* RHTree;
       unsigned int nPho;
       
       void branchesEB             ( TTree*, edm::Service<TFileService>& );
-      void branchesPhotonSel      ( TTree*, edm::Service<TFileService>& );
-      void fillEB             ( const edm::Event&, const edm::EventSetup& );
-      void get_photons        ( const edm::Event&, const edm::EventSetup& );
+      void branchesPhotonSel      ( TTree*, edm::Service<TFileService>& );*/
+      void fill_photons             ( const edm::Event&, const edm::EventSetup& );
       void predict_tf         ();
       
-      std::vector<float>& read_vEB_energy     (int);
-      std::string mode_;  // EventLevel / JetLevel
-      bool doJets_;
-      int  nJets_;
-      int iphi_Emax, ieta_Emax;
-      
-      double minJetPt_;
-      double maxJetEta_;
-      double z0PVCut_;
-      std::vector<int> vJetIdxs;
       std::vector<float> vIphi_Emax_;
       std::vector<float> vIeta_Emax_;
       std::vector<float> vSC_eta_;
       std::vector<float> vSC_phi_;
-      std::vector<int> vPreselPhoIdxs_;
+      //std::vector<int> vPreselPhoIdxs_;
       int nTotal, nPassed;
-      
-//void produce(edm::Event& iEvent, const edm::EventSetup& iSetup);
-//void predict_tf();
-//void beginStream(edm::StreamID);
-//void endStream();
-//void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 };
 
-static const bool debug = false;
-
-static const int nEE = 2;
-static const int nTOB = 6;
-static const int nTEC = 9;
-static const int nTIB = 4;
-static const int nTID = 3;
-static const int nBPIX = 4;
-static const int nFPIX = 3;
-
-
-static const int EB_IPHI_MIN = EBDetId::MIN_IPHI;//1;
+/*static const int EB_IPHI_MIN = EBDetId::MIN_IPHI;//1;
 static const int EB_IPHI_MAX = EBDetId::MAX_IPHI;//360;
 static const int EB_IETA_MIN = EBDetId::MIN_IETA;//1;
 static const int EB_IETA_MAX = EBDetId::MAX_IETA;//85;
-static const float zs = 0.;
+static const float zs = 0.;*/
 #endif
 //DEFINE_FWK_MODULE(ProducerTest);
