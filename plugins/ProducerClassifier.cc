@@ -6,8 +6,9 @@ using namespace std;
 
 ProducerClassifier::ProducerClassifier(const edm::ParameterSet& iConfig)
 {
- vEB_photon_frames = consumes<std::vector<std::vector<float>>>(iConfig.getParameter<edm::InputTag>("frames_"));
- std::cout<<"Reading done "<<std::endl;
+ //vEB_photon_frames = consumes<std::vector<std::vector<float>>>(iConfig.getParameter<edm::InputTag>("frames_"));
+ 
+ std::cout<<"Reading done "<<nTotal<<std::endl;
 }
 
 ProducerClassifier::~ProducerClassifier()
