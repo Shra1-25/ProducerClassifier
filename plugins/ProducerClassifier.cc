@@ -10,7 +10,7 @@ ProducerClassifier::ProducerClassifier(const edm::ParameterSet& iConfig)
  std::cout<<"Reading done "<<std::endl;
 }
 
-ProducerTest::~ProducerTest()
+ProducerClassifier::~ProducerClassifier()
 {
  
 }
