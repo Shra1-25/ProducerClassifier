@@ -5,7 +5,7 @@
 using namespace std;
 
 
-void ProducerTest::predict_tf(){
+void ProducerClassifier::predict_tf(){
  tensorflow::Session* session;
  tensorflow::GraphDef graph_def;
  tensorflow::SessionOptions opts;
