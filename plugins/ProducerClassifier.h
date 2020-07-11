@@ -63,10 +63,10 @@ using namespace std;
 static const int vEB_frame_height=32;
 static const int vEB_frame_width=32;
 
-class ProducerTest : public edm::stream::EDProducer<> {
+class ProducerClassifier : public edm::stream::EDProducer<> {
    public:
       
-      explicit ProducerTest(const edm::ParameterSet&);
+      explicit ProducerClassifier(const edm::ParameterSet&);
       ~ProducerTest();
       
       static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
