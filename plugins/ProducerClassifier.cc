@@ -4,7 +4,7 @@
 using namespace tensorflow;
 using namespace std;
 
-ProducerTest::ProducerTest(const edm::ParameterSet& iConfig)
+ProducerClassifier::ProducerClassifier(const edm::ParameterSet& iConfig)
 {
  vEB_photon_frames = consumes<std::vector<std::vector<float>>>(iConfig.getParameter<edm::InputTag>("frames"));
  std::cout<<"Reading done "<<std::endl;
@@ -21,7 +21,7 @@ ProducerTest::~ProducerTest()
 
 // ------------ method called to produce the data  ------------
 void
-ProducerTest::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
+ProducerClassifier::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
 {
    using namespace edm;
    nTotal++;
@@ -31,7 +31,7 @@ ProducerTest::produce(edm::Event& iEvent, const edm::EventSetup& iSetup)
 
 // ------------ method called once each stream before processing any runs, lumis or events  ------------
 void
-ProducerTest::beginStream(edm::StreamID)
+ProducerClassifier::beginStream(edm::StreamID)
 {
  nTotal = 0;
  nPassed = 0;
@@ -40,7 +40,7 @@ ProducerTest::beginStream(edm::StreamID)
 
 // ------------ method called once each stream after processing all runs, lumis and events  ------------
 void
-ProducerTest::endStream() {
+ProducerClassifier::endStream() {
  std::cout << " selected: " << nPassed << "/" << nTotal << std::endl;
 }
 
@@ -78,7 +78,7 @@ ProducerTest::endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup co
  
 // ------------ method fills 'descriptions' with the allowed parameters for the module  ------------
 void
-ProducerTest::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
+ProducerClassifier::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
   //The following says we do not know what parameters are allowed so do no validation
   // Please change this to state exactly what you do use, even if it is no parameters
   edm::ParameterSetDescription desc;
