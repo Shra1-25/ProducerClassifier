@@ -67,7 +67,7 @@ class ProducerClassifier : public edm::stream::EDProducer<> {
    public:
       
       explicit ProducerClassifier(const edm::ParameterSet&);
-      ~ProducerTest();
+      ~ProducerClassifier();
       
       static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 
