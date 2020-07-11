@@ -111,4 +111,4 @@ static const int EB_IETA_MIN = EBDetId::MIN_IETA;//1;
 static const int EB_IETA_MAX = EBDetId::MAX_IETA;//85;
 static const float zs = 0.;*/
 #endif
-//DEFINE_FWK_MODULE(ProducerTest);
+//DEFINE_FWK_MODULE(ProducerClassifier);
